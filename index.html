@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helicase Games</title>
+    <style>
+        body {
+            background-color: #1e1e2e;
+            color: #cdd6f4;
+            font-family: 'Quicksand', 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .header {
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            color: #f5c2e7;
+            font-size: 3.5rem;
+            margin: 0 0 10px 0;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            color: #a6adc8;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .creators {
+            display: inline-block;
+            background: #313244;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #f5c2e7;
+            border: 2px dashed #45475a;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        /* The Game Cards */
+        .game-card {
+            background: #252538;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 2px solid #45475a;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Styling for live games */
+        .game-card.live:hover {
+            border-color: #a6e3a1;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(166, 227, 161, 0.15);
+        }
+
+        /* Styling for unreleased games */
+        .game-card.wip {
+            opacity: 0.7;
+            border-style: dashed;
+        }
+
+        .game-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+
+        .live .game-title { color: #a6e3a1; }
+        .wip .game-title { color: #bac2de; }
+
+        .game-desc {
+            color: #a6adc8;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .tag-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            background: #181825;
+        }
+
+        .tag.dev-sp { color: #f5c2e7; border: 1px solid #f5c2e7; }
+        .tag.dev-sc { color: #89b4fa; border: 1px solid #89b4fa; }
+        .tag.genre { color: #fab387; }
+
+        .play-btn {
+            background: #a6e3a1;
+            color: #1e1e2e;
+            padding: 12px;
+            border-radius: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .wip-btn {
+            background: #313244;
+            color: #a6adc8;
+            padding: 12px;
+            border-radius: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>🧬 Helicase Games</h1>
+        <p class="subtitle">An indie arcade studio blending cozy aesthetics with high-stakes puzzles and biology.</p>
+        <div class="creators">Developed by SP & SC ✨</div>
+    </div>
+
+    <div class="game-grid">
+        
+        <!-- GAME 1: HANG-CELL (LIVE) -->
+        <a href="https://samikshapoojary.github.io/hang-cell/" class="game-card live" target="_blank">
+            <div>
+                <h2 class="game-title">Hang-Cell</h2>
+                <div class="tag-container">
+                    <span class="tag dev-sp">Dev: SP</span>
+                    <span class="tag genre">Biology / Word Arcade</span>
+                </div>
+                <p class="game-desc">Keep your tiny cell safe! Guess the molecular biology terms before your cell undergoes lysis in this cozy time-attack arcade.</p>
+            </div>
+            <div class="play-btn">▶ Play Now</div>
+        </a>
+
+        <!-- GAME 2: MUSICAL SEQUENCE (WIP) -->
+        <div class="game-card wip">
+            <div>
+                <h2 class="game-title">Resonance</h2>
+                <div class="tag-container">
+                    <span class="tag dev-sp">Dev: SP</span>
+                    <span class="tag genre">Memory / Audio</span>
+                </div>
+                <p class="game-desc">Repeat the musical notes in the exact sequence to synthesize the perfect rhythm. One wrong tap breaks the chain!</p>
+            </div>
+            <div class="wip-btn">🚧 In Development</div>
+        </div>
+
+        <!-- GAME 3: MURDER MYSTERY (WIP) -->
+        <div class="game-card wip">
+            <div>
+                <h2 class="game-title">Project: Alibi</h2>
+                <div class="tag-container">
+                    <span class="tag dev-sc">Dev: SC</span>
+                    <span class="tag genre">Mystery / Narrative</span>
+                </div>
+                <p class="game-desc">A deep narrative puzzle game where you must gather clues, verify alibis, and crack the case before time runs out.</p>
+            </div>
+            <div class="wip-btn">🚧 Coming Soon</div>
+        </div>
+
+        <!-- GAME 4: VIRAL PINBALL (WIP) -->
+        <div class="game-card wip">
+            <div>
+                <h2 class="game-title">Viral Pinball</h2>
+                <div class="tag-container">
+                    <span class="tag dev-sc">Dev: SC</span>
+                    <span class="tag genre">Arcade / Physics</span>
+                </div>
+                <p class="game-desc">Bounce, rack up massive combos, and dodge the antibodies in this high-speed biological pinball machine.</p>
+            </div>
+            <div class="wip-btn">🚧 Coming Soon</div>
+        </div>
+
+    </div>
+
+</body>
+</html>
